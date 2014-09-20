@@ -18,8 +18,8 @@ We distribute the data evenly across different processors(depending on size of i
 
 
 Parallel Quick Sort
-We randomly choose a pivot from one of the processes and broadcast it to every processor
 
+We randomly choose a pivot from one of the processes and broadcast it to every processor
 1. Divide the local list of each processor based on the pivot
 Each processor in the lower half of the processor list sends its “upper list” to processor with rank=own rank+s/2 and keep the 
 lower half of the data
