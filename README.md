@@ -19,15 +19,15 @@ We distribute the data evenly across different processors(depending on size of i
 
 Parallel Quick Sort
 
-We randomly choose a pivot from one of the processes and broadcast it to every processor
-1. Divide the local list of each processor based on the pivotEach processor in the lower half of the processor list sends its “upper list” to processor with rank=own rank+s/2 and keep the lower half of the data
+1. We randomly choose a pivot from one of the processes and broadcast it to every processor
+   Divide the local list of each processor based on the pivotEach processor in the lower half of the processor list        sends its “upper list” to processor with rank=own rank+s/2 and keep the lower half of the data
 
-2. Now, the upper-half processes have only values greater than the pivot, and the lower-half processes have only values smaller than the
-   pivot
+2. Now, the upper-half processes have only values greater than the pivot, and the lower-half processes have only values    smaller than the pivot
 
 3. Processor divides into 2 groups and the algorithm runs recursively Using Quicksort – Parallel Implementation
 
 4. After log P recursions, every process has an unsorted list of values completely disjoint from the values held by the other processes
+
 5. The elements in each process will be sorted and that the highest element in the Pi will be lesser than the lowest element in Pi+1 
 
 6. Each process can sort its list using sequential quicksort
